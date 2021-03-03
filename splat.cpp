@@ -9206,11 +9206,7 @@ int main(int argc, char *argv[])
         LoadLRP(tx_site[0],0); /* Get ERP status */
         LoadANO(ani_filename);
 
-        for (unsigned int x=0; x<txsites && x<max_txsites; x++)
-            PlaceMarker(tx_site[x]);
 
-        if (rxsite)
-            PlaceMarker(rx_site);
 
         if (bfs)
         {
@@ -9404,7 +9400,6 @@ int main(int argc, char *argv[])
     {
         char longley_ext[4], terrain_ext[4], elevation_ext[4], height_ext[4], norm_height_ext[4];
 
-        PlaceMarker(rx_site);
 
         if (longley_plot) {
             stripExtension(longley_file, longley_ext, 4);
@@ -9443,7 +9438,6 @@ int main(int argc, char *argv[])
 
         for (unsigned int x=0; x<txsites && x<4; x++)
         {
-            PlaceMarker(tx_site[x]);
 
             if (nolospath==0)
             {
@@ -9543,11 +9537,6 @@ int main(int argc, char *argv[])
     {
         /* Label the map */
 
-        if (kml==0)
-        {
-            for (unsigned int x=0; x<txsites && x<max_txsites; x++)
-                PlaceMarker(tx_site[x]);
-        }
 
         if (cities)
         {
